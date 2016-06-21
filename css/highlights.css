@@ -1,0 +1,9 @@
+#mBanner {
+	background-image: url("/img/assistance/banner_assistenza.jpg") ;
+
+    height:100%;
+}
+
+#mBanner > h2 {
+	margin: 2% 2% 2% 2%;
+}

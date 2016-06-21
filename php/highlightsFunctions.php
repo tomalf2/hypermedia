@@ -36,14 +36,13 @@
 	 	$i=0;
 		while($i < sizeof($array) ){
 			echo "<div class=\"row content\">";
-                echo "<div class=\"col-xm-6\">
+               
                 	
-                        <a href=\"assistance.html?tipo=".$categoryOfAssistance."&id=".$array[$i][AS_ID]."&fromHighlights=1\">
+                echo   "<a href=\"assistance.html?tipo=".$categoryOfAssistance."&id=".$array[$i][AS_ID]."&fromHighlights=1\">
                         <!-- nome assistenza -->
                               <p>".$array[$i+$j][AS_NAME]."</p><br>
-                        </a>
-                                       
-                </div>";
+                        </a>";
+                                      
                 // chiude row-content
 			echo "</div> ";
             $i++;

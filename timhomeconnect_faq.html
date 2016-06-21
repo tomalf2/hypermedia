@@ -7,6 +7,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
+  <link rel="stylesheet" type="text/css" href="css/life360.css">
 	<!--<link rel="stylesheet" type="text/css" href="css/devices.css">-->
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -15,31 +16,19 @@
 	<!-- Change current enlighted menu in the navbar -->
 	<script src="js/timtag.js" type="text/javascript"></script>
 	<script src="/js/usefulFunctions.js"></script>
-<script>
-  $(function () {
-    $('#myTab a:last').tab('show');
-  })
-  $('#myTab a').click(function (e) {
-  e.preventDefault();
-  $(this).tab('show');
-})
-</script>
 </head>
 <body>
 	
 	<div id="mHeader"></div>
     
-    <ul class="lib lib-tabs" id="myTab">
-  <li><a href="timhomeconnect_description.html">description</a></li>
-  <li><a href="timhomeconnect_activation.html">auctivation</a></li>
-  <li class="active"><a href="timhomeconnect_faq.html">question</a></li>
-</ul>
+   <div id="mButton" class="btn-group-vertical">
+    <button type="button"  onclick="location.href='timhomeconnect_description.html'" class="btn ">Description</button>
+    <button type="button"  onclick="location.href='timhomeconnect_activation.html'" class="btn ">Acrivation and Rules</button>
+    <button type="button"  class="btn btn-primary ">FAQ</button>
+  </div>
 
-<div class="tab-content">
-  <div class="tab-pane" id="desc"><div id="timhomeconnect_description"></div></div>
-  <div class="tab-pane" id="acti"><div id="timhomeconnect_activation"></div></div>
-  <div class="tab-pane active" id="faq"><div id="timhomeconnect_faq"></div></div>
-</div>
+  <button id="mBackButton" type="button" class="btn btn-primary" onclick="location.href='smartlife_family.html'">Go to Smartlife Casa e Famiglia</button>
+
     
     <div class="container">
     <h3 align="center">TIM Home ConnectFAQ</h3>
@@ -52,7 +41,9 @@ Presso i Negozi TIM</li>
       <li class="list-group-item">Qualunque telefono con un sistema operativo e dotat di GPS e connessione a internet attivi può usufruire di questo servizio. In ogni caso puoi sempre consultare la lista dei dispositivi compatibili cliccando il pulsante "SUPPORTED DEVICES" quia a lato.</li>
         </ul>
 </div>
-    <div class="container"><img src="/img/smartliving/timehome_22.jpg" width="1000" height="200">
+    <div class="container"><img src="/img/smartliving/timehome_22.jpg" class="img-responsive">
 </div>
+
+  <div id="footer"></div>
 </body>
 </html>
