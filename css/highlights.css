@@ -1,9 +1,14 @@
-#mBanner {
-	background-image: url("/img/assistance/banner_assistenza.jpg") ;
-
-    height:100%;
+.well {
+	background-color: #0072B2 !important
 }
 
-#mBanner > h2 {
-	margin: 2% 2% 2% 2%;
+.text-into-well {
+	color: white !important;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }

@@ -4,6 +4,7 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/highlights.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
@@ -32,20 +33,25 @@
 				   // fine barra laterale
 
 		echo "<div id=\"spazio_centrale\" class=\"col-sm-6 \"> <br><br> ";
+
+
 	 
 	 	$i=0;
 		while($i < sizeof($array) ){
 			echo "<div class=\"row content\">";
                
-                	
-                echo   "<a href=\"assistance.html?tipo=".$categoryOfAssistance."&id=".$array[$i][AS_ID]."&fromHighlights=1\">
-                        <!-- nome assistenza -->
-                              <p>".$array[$i+$j][AS_NAME]."</p><br>
-                        </a>";
-                                      
+                // facciamo righe da 3 telefoni 
+				for($j = 0; $j < 2 && $i+$j<sizeof($array); $j++){
+					echo "<div class=\"col-sm-6\"><div class=\"well\">";
+	                echo   "<a href=\"assistance.html?tipo=".$categoryOfAssistance."&id=".$array[$i+$j][AS_ID]."&fromHighlights=1\">
+	                        <!-- nome assistenza -->
+	                              <p class=\"text-into-well\">".$array[$i+$j][AS_NAME]."</p><br>
+	                        </a>";
+	                echo "</div></div>";
+                 }                     
                 // chiude row-content
 			echo "</div> ";
-            $i++;
+            $i = $i+$j;
 		}
 
 		echo "</div>"; // chiude il div con id spazio_centrale
