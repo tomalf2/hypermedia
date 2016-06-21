@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>qualcosa</title>
+		<link rel="stylesheet" href="desktop.css" />
+		<link rel="stylesheet" href="mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script><!--for animation-->
+	<script> 
+		function smartphonesVisualize(type){
+		$.getJSON("./database.php",{function:"getdevicebytype",tipo:"smartphone"}, function(result){  
+			document.getElementById("smartPhoneVisualizer").innerHTML =  "nome"+result[0][0] + "<br>" ;
+  	  });		
+	  }
+
+	  function mGetHeader(nomePagina, divDestinazione) {
+	  		var parametri = {};
+	  		parametri["pagina"] = nomePagina;
+		  	$.get("prova_temporanea.php", parametri, function(data, status){
+		  	  	document.getElementById(divDestinazione).innerHTML = data;
+		  	  	console.log(status);
+		  	});
+
+
+	  }
+	</script>
+</head>
+<body>
+
+<script type="text/javascript">
+	mGetHeader("blabla", "mGetHeader");
+</script>
+
+<div id="smartPhoneVisualizer">smartphone</div>
+
+<div id="mGetHeader" style="background-color: green"></div>
+
+</body>
+</html>

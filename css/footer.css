@@ -1,0 +1,47 @@
+#first-row {
+	margin-top: 20px;
+}
+
+.mFooter {
+	color: white;
+	padding-top: 1%;
+	padding-bottom: 0.5%;
+	text-align: center;
+}
+
+.mList > li {
+	background-color: #222222;
+	color: white;
+	border-style: hidden;
+
+}
+
+.mList {
+	vertical-align: middle;
+}
+
+#first-row {
+	background-color: #222222;
+}
+
+#logo {
+	text-align: right;
+	height: 100%;
+}
+
+#second-row {
+	background-color: #0072B0;
+	padding-left: 0%;
+	text-align: center;
+}
+
+
+#gruppo_telecom_italia {
+	display: block;
+	float: none;
+}
+
+.mFooter * {
+   	color: white;
+    text-decoration: none;
+}

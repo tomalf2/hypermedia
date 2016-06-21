@@ -1,0 +1,22 @@
+.mSquare {
+	padding: 2% 2% 2% 2%;
+	border-radius: 10px;
+	background-color: #0072B2;
+	display: block;
+}
+
+.mSquare * {
+	color: white;
+	text-decoration: none;
+}
+
+.mRow {
+	padding-bottom: 3%;
+}
+
+#smartLife {
+	margin-left: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 320%;
+}

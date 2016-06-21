@@ -1,0 +1,39 @@
+#header_img {
+	width: 100%;
+	display: block;
+}
+
+@media (max-width: 767px) {
+  .nav-tabs.nav-justified > li {
+    float: left;
+    width: 50%;
+  }
+}
+
+.affix {
+      top: 0;
+      width: 100%;
+      z-index: 10;
+  }
+
+.affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+ .my_tel_container {
+ 	float: left;
+ 	width: 33%;
+ 	padding-left: 2px;
+ 	padding-right: 2px;
+ 	height: 200px;
+ }
+
+ #tab_group1 {
+ 	padding-left: 6px;
+ 	padding-right: 6px;
+ }
+
+ #navbar {
+  margin-top: -1px;
+  border-radius: 0px;
+ }
