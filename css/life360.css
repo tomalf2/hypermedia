@@ -4,12 +4,25 @@
 }
 
 #mButton {
-	margin-top: 3%;
-	margin-left: 3%;
+	margin-top: 2%;
+	margin-left: 2%;
 }
 
 #mBackButton {
-	margin-top: 3%;
-	margin-left: 3%;
+	margin-top: 2%;
+	margin-left: 2%;
 	display: block;
+}
+
+#mConnectedDeviceButton {
+	margin-top: 2%;
+	margin-left: 2%;
+	display: block;
+	margin-bottom: 2%;
+}
+
+#brcrumb {
+	margin-left: 3%;
+	margin-top: 2%;
+	margin-right: 2%;
 }

@@ -24,11 +24,14 @@
     $order = $_GET['order'];
     $assistanceID =$_GET['assistanceID'];
     $assistanceName = $_GET['assistanceName'];
+    $smartLifeID = $_GET['smartLifeID'];
+    $fromSmartLife = $_GET['fromSmartLife'];
+    $smartLifeName= $_GET['smartLifeName'];
 	$limitRelatedProducts = $_GET['limit'];
 	switch ($what) {
 		case 'device':
-			getDeviceOfId($deviceID,$fromPromotion,$fromHome,$fromAssistance,$order,$assistanceID,$assistanceName);
-			break;
+			getDeviceOfId($deviceID,$fromPromotion,$fromHome,$fromAssistance,$fromSmartLife,$smartLifeID,$smartLifeName,$order,$assistanceID,$assistanceName);
+            break;
 		case 'rel':
 			getProductsRelated($deviceID, $ofType, $limitRelatedProducts);
 			break;
@@ -38,6 +41,9 @@
         case 'relatedAssistance':
         	getAssistances($deviceID,$ofType,$deviceName);
 			break;	
+        case 'relatedSmartLife':
+        	getSmartLifes($deviceID,$ofType,$deviceName);
+			break;	
 		default:
 			echo "javascript did not called the right function, check you have set the right what parameter";
 			break;
@@ -46,12 +52,13 @@
 
 
 	//declared_functions
-	function getDeviceOfId($deviceID,$fromPromotion,$fromHome, $fromAssistance,$order,$assistanceID,$assistanceName){
-	
+	function getDeviceOfId($deviceID,$fromPromotion,$fromHome, $fromAssistance,$fromSmartLife,$smartLifeID,$smartLifeName,$order,$assistanceID,$assistanceName){
 		$array = getProductInfoId($deviceID);
 		
         $numberOfRelatedAssistances=sizeof(getAssistancesByDevID($deviceID));
-
+        
+        $numberOfRelatedSmart=sizeof(getSmartLifeByDevID($deviceID));
+        
 		// breadcrumb
 		$breadcrumb = "<div id=\"mBreadcrumb\">
 			<span id=\"title\">
@@ -86,14 +93,27 @@
                                 	echo ''.substr(urldecode($assistanceName),0,14)."...</a>";
                                 else
                                 	echo ''.urldecode($assistanceName)."</a>";
-                                }                                
+                                }       
+                            else
+                            	if($fromSmartLife==1){
+                                $link=getSmartLinkFromId($smartLifeID);
+                                 echo"<a href='".$link."' class=\"btn btn-primary\">Back to ";
+                                if(strlen(urldecode($smartLifeName))> 14)
+                                	echo ''.substr(urldecode($smartLifeName),0,14)."...</a>";
+                                else
+                                	echo ''.urldecode($smartLifeName)."</a>";
+                                }
                      	}
                      }
                     echo"<br><br>
         			  <a onclick=\"getRelatedAssistance(".$array[DEV_ID].",'".$array[DEV_NAME]."','".$array[DEV_TYPE]."','visualSmart')\" class=\"btn btn-primary";
                       if( $numberOfRelatedAssistances < 1)
                         	echo " disabled";
-                      echo "\">Assistenza</a>
+                      echo "\">Assistenza</a> <br><br>
+                      <a onclick=\"relatedSmartLife(".$array[DEV_ID].",'".$array[DEV_NAME]."','".$array[DEV_TYPE]."','visualSmart')\" class=\"btn btn-primary";
+                      if( $numberOfRelatedSmart < 1)
+                        	echo " disabled";
+                      echo "\">Smart Life </a>
 				    </div>";
 				   // fine barra laterale
 
@@ -171,13 +191,13 @@
 				  <div class=\"row content\">";
 
 				  //barra laterale sinistra
-		echo 		"<div class=\"col-xs-2 sidenav\">
+		echo 		"<div class=\"col-sm-2 sidenav\">
        				<br><br>
 				    <a href=\"all_category_devices.html\" class=\"btn btn-primary\">Go to Devices</a>
 				    </div>";
 				   // fine barra laterale
 
-		echo "<div id=\"spazio_centrale\" class=\"col-xs-8 text-left\"> ";
+		echo "<div id=\"spazio_centrale\" class=\"col-sm-8 text-left\"> ";
 	 
 	 	$i=0;
 		while($i < sizeof($array) ){
@@ -204,13 +224,7 @@
 		echo "</div>"; // chiude il div con id spazio_centrale
 	    	
 	    	//barra laterale destra
-		echo "<div class=\"col-xs-2 sidenav\">
-			     <!--  <div class=\"well\">
-			        <p>ADS</p>
-			      </div> -->
-			      <!-- <div class=\"well\">
-			        <p>ADS</p>
-			      </div> -->
+		echo "<div class=\"col-sm-2 sidenav\">
 			  </div>";
 			  // fine barra laterla destra
 
@@ -337,6 +351,69 @@
 
 */
 
+	function getSmartLifes($deviceID,$ofType,$deviceName){
+    
+    	$array = getSmartLifeByDevID($deviceID);
+		
+
+		// breadcrumb
+		$breadcrumb = "<div id=\"mBreadcrumb\">
+			<span id=\"title\">
+				<a href=\"all_category_devices.html\">Devices
+				</a> > 
+				<a href=\"all_devices.html?tipo=".$deviceType."\" >".$deviceType."
+				</a> >
+                <a href=\"device.html?tipo=".$deviceType."&id=".$deviceID."\">".$deviceName."
+				</a> 
+			</span>
+			>
+			<span id=\"item_not_clickable\">SmartLife</span>
+			</div>";
+		echo $breadcrumb;
+		// end
+        
+		echo "<div class=\"container-fluid text-center\">    
+				  <div class=\"row content\">";
+
+				  //barra laterale sinistra
+		echo 		"<div class=\"col-sm-3 sidenav\">
+        			<br><br>
+        			    <a onclick=\"visualizer(".$deviceID.",'visualSmart')\" class=\"btn btn-primary\">Back to ".$deviceName."</a>
+                    </div>";
+				   // fine barra laterale
+
+		echo "<div id=\"spazio_centrale\" class=\"col-sm-6 \"> <br><br> ";
+	 
+	 	$i=0;
+		while($i < sizeof($array) ){
+			echo "<div class=\"row content\">";
+                echo "<div class=\"col-xm-6\">
+                        <a href=\"".$array[$i][SL_LINK]."?fromDevice=1&deviceId=".$deviceID."&deviceName=".$deviceName."\">
+                        <!-- nome assistenza -->
+                              <p>".$array[$i][SL_NAME]."</p><br>
+                        </a>
+                                       
+                </div>";
+                // chiude row-content
+			echo "</div> ";
+            $i++;
+		}
+
+		echo "</div>"; // chiude il div con id spazio_centrale
+	    	
+	    	//barra laterale destra
+		echo "<div class=\"col-sm-3 sidenav\">
+			  </div>";
+			  // fine barra laterla destra
+
+			  //chiude il container fluid ed il row-content iniziale
+		echo "</div>
+			</div>";
+    
+    }
+    
+
+
 	function getAssistances($deviceID,$deviceType,$deviceName) {
 
 		$array = getAssistancesByDevID($deviceID);
@@ -375,7 +452,7 @@
 			echo "<div class=\"row content\">";
                 echo "<div class=\"col-xm-6\">
                 	
-                        <a href=\"assistance.html?id=".$array[$i][AS_ID]."&fromPhone=1&phoneId=".$deviceID."&phoneName=".$deviceName."\">
+                        <a href=\"assistance.html?id=".$array[$i][AS_ID]."&fromDevice=1&deviceId=".$deviceID."&deviceName=".$deviceName."\">
                         <!-- nome assistenza -->
                               <p>".$array[$i+$j][AS_NAME]."</p><br>
                         </a>

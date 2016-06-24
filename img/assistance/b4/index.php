@@ -1,0 +1,1 @@
+// <meta http-equiv="refresh" content="0;URL=http://hyp65.altervista.org/img/assistance/b1"></head>

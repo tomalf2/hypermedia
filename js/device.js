@@ -10,18 +10,21 @@ function onLoadFuc(){
             var fromPromotion = gets['fromPromotion'];
             var fromHome = gets['fromHome'];
             var fromAssistance = gets['fromAssistance'];
+            var fromSmartLife = gets['fromSmartLife'];
+            var smartLifeID = gets['smartLifeID'];
+            var smartLifeName = gets['smartLifeName'];
             var assistanceID = gets['assistanceId'];
             var assistanceName = gets['assistanceName'];
 		/*	typeVisualize(deviceID,$("#visualSmart"));*/
 			mGetHeader("devices", "mHeader");	// declared in usefulFunctions.js
-			visualizer(deviceID, "visualSmart",fromPromotion,fromHome,fromAssistance ,assistanceID ,assistanceName ,order);
+			visualizer(deviceID, "visualSmart",fromPromotion,fromHome,fromAssistance,fromSmartLife ,smartLifeID,smartLifeName,assistanceID ,assistanceName ,order);
 			//getRelatedProducts(deviceID, deviceType, $("#relatedProducts") );
       footer("footer");
 }
 
 //funzione da usare per formattare le informazioni tirate fuori
-function visualizer(deviceID,div,fromPromotion,fromHome,fromAssistance, assistanceID ,assistanceName ,order){
-    $.get("php/deviceFunctions.php", {what: 'device', id: deviceID,fromPromotion : fromPromotion,fromHome:fromHome,fromAssistance :fromAssistance ,order : order,assistanceID:assistanceID,assistanceName:assistanceName}, 
+function visualizer(deviceID,div,fromPromotion,fromHome,fromAssistance, fromSmartLife,smartLifeID,smartLifeName, assistanceID ,assistanceName ,order){
+    $.get("php/deviceFunctions.php", {what: 'device', id: deviceID,fromPromotion : fromPromotion,smartLifeName:smartLifeName,smartLifeID:smartLifeID, fromSmartLife:fromSmartLife,fromHome:fromHome,fromAssistance :fromAssistance ,order : order,assistanceID:assistanceID,assistanceName:assistanceName}, 
   		function(data, status){
 	  		$('#'+div).html( data );
   	});
@@ -40,11 +43,18 @@ function getRelatedAssistance(deviceID,deviceName,deviceType,div){
         	$('#'+div).html( data );
   	});
 }
- 
- 
-function getRelatedAssistance(assistanceID,assistanceName,assistanceType,div){ 
-	$.get("php/deviceFunctions.php", {what: 'relatedAssistance', id: assistanceID, name : assistanceName, tipo: assistanceType}, 
+
+
+function relatedSmartLife(deviceID,deviceName,deviceType,div){
+	$.get("php/deviceFunctions.php", {what: 'relatedSmartLife', id: deviceID, name : deviceName, tipo: deviceType}, 
   		function(data, status){
         	$('#'+div).html( data );
   	});
 }
+ 
+/*function getRelatedAssistance(assistanceID,assistanceName,assistanceType,div){ 
+	$.get("php/deviceFunctions.php", {what: 'relatedAssistance', id: assistanceID, name : assistanceName, tipo: assistanceType}, 
+  		function(data, status){
+        	$('#'+div).html( data );
+  	});
+}*/

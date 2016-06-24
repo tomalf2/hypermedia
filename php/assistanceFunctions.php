@@ -17,16 +17,16 @@
 
 	$ofType = $_GET['tipo'];
 	$assistanceID = $_GET['id'];
-    $fromPhone = $_GET['fromPhone'];
-    $phoneID = $_GET['phoneID'];
-    $phoneName = $_GET['phoneName'];
+    $fromDevice = $_GET['fromDevice'];
+    $deviceID = $_GET['deviceID'];
+    $deviceName = $_GET['deviceName'];
     $fromHighlights = $_GET['fromHighlights'];
     $assistanceName = $_GET['name'];
     
 	
 	switch ($what) {
 		case 'assistance':
-			getAssistanceOfId($assistanceID,$fromHighlights,$fromPhone,$phoneID,$phoneName);
+			getAssistanceOfId($assistanceID,$fromHighlights,$fromDevice,$deviceID,$deviceName);
 			break;
 		case 'list':
 			getAssistances($ofType);
@@ -44,9 +44,10 @@
 
 
 	//declared_functions
-	function getAssistanceOfId($assistanceID,$fromHighlights,$fromPhone,$phoneID,$phoneName){
-	
+	function getAssistanceOfId($assistanceID,$fromHighlights,$fromDevice,$deviceID,$deviceName){
+    
 		$array = getAssistanceInfoId($assistanceID);
+        
         
         $numberOfRelatedProducts = sizeof(getProductsByAssistanceID($assistanceID));
 		
@@ -77,12 +78,12 @@
         			if($fromHighlights==1)
 				      	echo"<a href=\"highlights.html\" class=\"btn btn-primary\">Back to Highlights</a>";
                     else{
-				    	if($fromPhone==1){ 
-                        	echo"<a href=\device.html?id=".$phoneID." class=\"btn btn-primary\">Back to ";
-                             if(strlen(urldecode($phoneName))> 14)
-                                	echo ''.substr(urldecode($phoneName),0,14)."...</a>";
+				    	if($fromDevice==1){ 
+                        	echo"<a href=\device.html?id=".$deviceID." class=\"btn btn-primary\">Back to ";
+                             if(strlen(urldecode($deviceName))> 14)
+                                	echo ''.substr(urldecode($deviceName),0,14)."...</a>";
                                 else
-                                	echo ''.urldecode($phoneName)."</a>";
+                                	echo ''.urldecode($deviceName)."</a>";
                             }
                     }
                     

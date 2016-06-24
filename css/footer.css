@@ -6,18 +6,18 @@
 	color: white;
 	padding-top: 1%;
 	padding-bottom: 0.5%;
-	text-align: center;
 }
 
 .mList > li {
 	background-color: #222222;
 	color: white;
 	border-style: hidden;
-
+	white-space: nowrap;
 }
 
 .mList {
 	vertical-align: middle;
+	line-height: 250%;
 }
 
 #first-row {

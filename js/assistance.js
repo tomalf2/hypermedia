@@ -4,21 +4,21 @@ $( window ).load(function() {
 
 function onLoadFuc(){
 			var gets = geturlvariabili();	// declared in usefulFunctions.js
-			var deviceID = gets['id'];
+			var assistanceID = gets['id'];
 			var deviceType = gets['tipo'];
             var fromHighlights = gets['fromHighlights'];
-            var fromPhone = gets['fromPhone'];
-            var phoneID = gets['phoneId'];
-            var phoneName = gets['phoneName'];
+            var fromDevice = gets['fromDevice'];
+            var deviceID = gets['deviceId'];
+            var deviceName = gets['deviceName'];
 			mGetHeader("assistance", "mHeader");	// declared in usefulFunctions.js
-			visualizer(deviceID,'visualSmart',fromHighlights,fromPhone,phoneID,phoneName);
+			visualizer(assistanceID,'visualSmart',fromHighlights,fromDevice,deviceID,deviceName);
       footer("footer");
 
 }
 
 //funzione da usare per formattare le informazioni tirate fuori
-function visualizer(assistanceID,div,fromHighlights,fromPhone,phoneID,phoneName){
-  	$.get("php/assistanceFunctions.php", {what: 'assistance', id: assistanceID, fromHighlights : fromHighlights, fromPhone : fromPhone, phoneID : phoneID , phoneName:phoneName}, 
+function visualizer(assistanceID,div,fromHighlights,fromDevice,deviceID,deviceName){
+  	$.get("php/assistanceFunctions.php", {what: 'assistance', id: assistanceID, fromHighlights : fromHighlights, fromDevice : fromDevice, deviceID : deviceID , deviceName:deviceName}, 
   		function(data, status){
 	  		 $('#'+div).html( data );
   	});

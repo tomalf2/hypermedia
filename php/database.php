@@ -5,8 +5,9 @@
 		define("DATABASE", "my_hyp65"); // Nome del database.
 		define("TABLE_PRODUCTS", "products");
         define("TABLE_ASSISTANCE", "assistance");
+        define("TABLE_SMART", "smartlife");
         define("TABLE_DEVICEASSISTANCE", "producttofromassistance");
-        define("TABLE_DEV_TO_FROM_SL", "devices-to/from-services");
+        define("TABLE_DEVICESMART", "producttofromservice");
 		define("ID", "id");
 
 		
@@ -30,6 +31,8 @@
 		define('SL_IN_PROM', '6');
 		define('SL_LINK', '7');
 		define('SL_PRICE', '8');
+		define('SL_FAMILY', '9');
+		define('SL_FAMILY_LINK', '10');
         
         define('AS_NAME', '0');
 		define('AS_DESC', '1');
@@ -104,6 +107,46 @@
          
 		}
 		
+        
+        function getSmartLinkFromId($smartLifeID){
+          $a;//array con dentro i campi da restituire
+          $mysqli = connect();
+          if(($statement = $mysqli->prepare("SELECT * FROM ".TABLE_SMART." WHERE id =?"))){
+          	echo $mysqli->error;
+            $statement->bind_param('i', $smartLifeID);
+            $statement->execute();
+            
+            
+            $r = $statement->get_result();
+			$a = $r->fetch_array(MYSQLI_NUM);
+			$brbr=array();
+			foreach($a as $v){
+				$brbr[]=str_replace("*",'',(str_replace( "\r\n", '', (nl2br(utf8_encode( $v))))));
+			}
+		  }
+          $mysqli->close();
+          return $brbr[SL_LINK];
+        }
+        
+        function getSmartInfoId($smartLifeID){
+          $a;//array con dentro i campi da restituire
+          $mysqli = connect();
+          if(($statement = $mysqli->prepare("SELECT * FROM ".TABLE_SMART." WHERE id =?"))){
+          	echo $mysqli->error;
+            $statement->bind_param('i', $smartLifeID);
+            $statement->execute();
+            
+            $r = $statement->get_result();
+			$a = $r->fetch_array(MYSQLI_NUM);
+			$brbr=array();
+			foreach($a as $v){
+				$brbr[]=str_replace("*",'',(str_replace( "\r\n", '', (nl2br(utf8_encode( $v))))));
+			}
+		  }
+          $mysqli->close();
+          return $brbr;
+        }
+        
         function getAssistanceInfoId($id){
           $a;//array con dentro i campi da restituire
           $mysqli = connect();
@@ -276,6 +319,36 @@
             $mysqli->close();
             return $brbr;
         }
+        
+        function getProductsBySmartLifeID($smartLifeID){
+        	$a;//array con dentro i campi da restituire
+            $mysqli = connect();
+            if(($statement = $mysqli->prepare("SELECT * FROM ".TABLE_DEVICESMART." WHERE slid=?"))){
+              echo $mysqli->error;
+              $statement->bind_param('i', $smartLifeID);
+              $statement->execute();
+              $r = $statement->get_result();
+              $brbr=array();
+              while($a = $r->fetch_array(MYSQLI_NUM))
+                  $brbr[]=getProductInfoId($a[0]);
+            }
+            $mysqli->close();
+            return $brbr;
+        }
 
-
+		function getSmartLifeByDevID($deviceID){
+       		$a;//array con dentro i campi da restituire
+            $mysqli = connect();
+            if(($statement = $mysqli->prepare("SELECT * FROM ".TABLE_DEVICESMART." WHERE deviceid=?"))){
+              echo $mysqli->error;
+              $statement->bind_param('i', $deviceID);
+              $statement->execute();
+              $r = $statement->get_result();
+              $brbr=array();
+              while($a = $r->fetch_array(MYSQLI_NUM))
+                  $brbr[]=getSmartInfoId($a[1]);
+            }
+            $mysqli->close();
+            return $brbr;
+        }
 ?>

@@ -52,7 +52,7 @@
 			if( $endIndx === false )
 				$endIndx = strlen($url);
 			$type = substr($url, $startIndxOfType, $endIndx - $startIndxOfType);
-			return $type;	
+			return $type;
 		}
 	}
 
