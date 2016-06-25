@@ -29,14 +29,14 @@ function mHeaderTemplate($active){
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../index.html\">Home</a></li> ";
+					echo"<a href=\"./index.html\">Home</a></li> ";
 
 
 					if($active=="devices")
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../all_category_devices.html\">Devices</a></li>";
+					echo"<a href=\"./all_category_devices.html\">Devices</a></li>";
 
 
 	// 				 codice per menu espandibile --> sostituire la echo qui sopra col codice sottostante
@@ -55,7 +55,7 @@ function mHeaderTemplate($active){
 						echo"<li class=\"active\">";
 					else
 						echo"<li>";
-					echo"<a href=\"../promotions.html\">Promotions</a></li>";
+					echo"<a href=\"./promotions.html\">Promotions</a></li>";
 
 
 
@@ -63,28 +63,28 @@ function mHeaderTemplate($active){
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../all_category_assistance.html\">Assistance</a></li>"; 
+					echo"<a href=\"./all_category_assistance.html\">Assistance</a></li>"; 
 
 
 					if($active=="highlights")
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../highlights.html\">Highlights</a></li>"; 
+					echo"<a href=\"./highlights.html\">Highlights</a></li>"; 
 
 
 					if($active=="smartlife")
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../all_category_smartlife.html\">Smart Life Services</a></li>"; 
+					echo"<a href=\"./all_category_smartlife.html\">Smart Life Services</a></li>"; 
 
 
 					if($active=="aboutus")
 						echo"<li class=\"active\">";
 					else	
 						echo"<li>";
-					echo"<a href=\"../aboutus.html\">About Us</a></li> 
+					echo"<a href=\"./aboutus.html\">About Us</a></li> 
 
 
 				</ul>

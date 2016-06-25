@@ -23,14 +23,14 @@ function onLoadFuc(){
 
 //funzione da usare per formattare le informazioni tirate fuori
 function visualizer(assistanceID,div,fromHighlights,fromDevice,deviceID,deviceName){
-  	$.get("php/assistanceFunctions.php", {what: 'assistance', id: assistanceID, fromHighlights : fromHighlights, fromDevice : fromDevice, deviceID : deviceID , deviceName:deviceName}, 
+  	$.get("http://hyp65.altervista.org/php/assistanceFunctions.php", {what: 'assistance', id: assistanceID, fromHighlights : fromHighlights, fromDevice : fromDevice, deviceID : deviceID , deviceName:deviceName}, 
   		function(data, status){
 	  		 $('#'+div).html( data );
   	});
 }
 
 function getRelatedProducts(assistanceID,assistanceName,assistanceType,div){
-	$.get("php/assistanceFunctions.php", {what: 'relatedProducts', id: assistanceID, tipo: assistanceType,name: assistanceName}, 
+	$.get("http://hyp65.altervista.org/php/assistanceFunctions.php", {what: 'relatedProducts', id: assistanceID, tipo: assistanceType,name: assistanceName}, 
   		function(data, status){
         	$('#'+div).html( data );
   	});

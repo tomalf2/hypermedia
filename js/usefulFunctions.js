@@ -13,6 +13,16 @@ function mGetHeader(currentPageName, targetDiv) {
   	});
 }
 
+$(document).click(function (event) {
+    var clickover = $(event.target);
+    console.log( clickover );
+    var $navbar = $(".navbar-collapse");               
+    var _opened = $navbar.hasClass("in");
+    if (_opened === true ) {      
+        $navbar.collapse('hide');
+    }
+});
+
 
 //chiamata json, callback serve per poter utilizzare la variabile result quando è pronta e non prima in quanto essendo una 
 //chiamata asincrona l'assegnamento immediato di result a una varibile di ritorno equivale ad assegnare null

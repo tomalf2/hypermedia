@@ -24,7 +24,7 @@ function onLoadFuc(){
 
 //funzione da usare per formattare le informazioni tirate fuori
 function visualizer(info,div){
-  	$.get("php/deviceFunctions.php", {what: 'list', tipo: info}, 
+  	$.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'list', tipo: info}, 
   		function(data, status){
 	  		div.html( data );
   	});

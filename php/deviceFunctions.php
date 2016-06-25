@@ -123,7 +123,7 @@
 			echo "<div class=\"row content\">";
 
 					echo "<div class=\"col-xs-6\">
-							<img class=\"img-responsive\" src=\"/img/devices/".$array[DEV_MODEL].".jpg\">
+							<img class=\"img-responsive\" src=\"./img/devices/".$array[DEV_MODEL].".jpg\">
 						</div>
 						
 						<div class=\"col-xs-6\">
@@ -208,7 +208,7 @@
 
 				echo "<div class=\"col-xs-4\">
 						<a href=\"device.html?id=".$array[$i+$j][DEV_ID]."\">
-							<img class=\"img-responsive\" src=\"/img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
+							<img class=\"img-responsive\" src=\"./img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
 							<!-- nome telefono -->
 							<center>
 							<p>".$array[$i+$j][DEV_NAME]."</p>
@@ -258,7 +258,7 @@
 		for($i =0; $i< sizeof($array); $i++){
 				echo "<div class=\"col-xs-".$colWidth."\">
 							<a href=\"device.html?tipo=".$categoryOfDevice."&id=".$array[$i][DEV_ID]."\">
-								<img class=\"img-responsive\" src=\"/img/devices/".$array[$i][DEV_MODEL].".jpg\">
+								<img class=\"img-responsive\" src=\"./img/devices/".$array[$i][DEV_MODEL].".jpg\">
 								<!-- nome telefono -->
 								<p>".$array[$i][DEV_NAME]."</p>
 								<p>".$array[$i][DEV_PRICE]."€<p>

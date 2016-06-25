@@ -29,21 +29,21 @@ function onLoadFuc(){
 
 //funzione da usare per formattare le informazioni tirate fuori
 function visualizer(deviceID,div,fromPromotion,fromHome,fromAssistance, fromSmartLife,smartLifeID,smartLifeName, assistanceID ,assistanceName ,order){
-    $.get("php/deviceFunctions.php", {what: 'device', id: deviceID,fromPromotion : fromPromotion,smartLifeName:smartLifeName,smartLifeID:smartLifeID, fromSmartLife:fromSmartLife,fromHome:fromHome,fromAssistance :fromAssistance ,order : order,assistanceID:assistanceID,assistanceName:assistanceName}, 
+    $.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'device', id: deviceID,fromPromotion : fromPromotion,smartLifeName:smartLifeName,smartLifeID:smartLifeID, fromSmartLife:fromSmartLife,fromHome:fromHome,fromAssistance :fromAssistance ,order : order,assistanceID:assistanceID,assistanceName:assistanceName}, 
   		function(data, status){
 	  		$('#'+div).html( data );
   	});
 }
 
 function getRelatedProducts(deviceID, deviceType, div){
-  	$.get("php/deviceFunctions.php", {what: 'rel', id: deviceID, tipo: deviceType, limit: 3}, 
+  	$.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'rel', id: deviceID, tipo: deviceType, limit: 3}, 
   		function(data, status){
 	  		div.html( data );
   	});
  }
 
 function getRelatedAssistance(deviceID,deviceName,deviceType,div){ 
-	$.get("php/deviceFunctions.php", {what: 'relatedAssistance', id: deviceID, name : deviceName, tipo: deviceType}, 
+	$.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'relatedAssistance', id: deviceID, name : deviceName, tipo: deviceType}, 
   		function(data, status){
         	$('#'+div).html( data );
   	});
@@ -51,14 +51,14 @@ function getRelatedAssistance(deviceID,deviceName,deviceType,div){
 
 
 function relatedSmartLife(deviceID,deviceName,deviceType,div){
-	$.get("php/deviceFunctions.php", {what: 'relatedSmartLife', id: deviceID, name : deviceName, tipo: deviceType}, 
+	$.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'relatedSmartLife', id: deviceID, name : deviceName, tipo: deviceType}, 
   		function(data, status){
         	$('#'+div).html( data );
   	});
 }
  
 /*function getRelatedAssistance(assistanceID,assistanceName,assistanceType,div){ 
-	$.get("php/deviceFunctions.php", {what: 'relatedAssistance', id: assistanceID, name : assistanceName, tipo: assistanceType}, 
+	$.get("http://hyp65.altervista.org/php/deviceFunctions.php", {what: 'relatedAssistance', id: assistanceID, name : assistanceName, tipo: assistanceType}, 
   		function(data, status){
         	$('#'+div).html( data );
   	});

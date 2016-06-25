@@ -17,13 +17,13 @@ function mOnDocumentReady(){
 
 
 function getPromotionDevices(div, ofType, limit){
-	$.get("/php/promotionFunctions.php", {what: 'devices_not_sl', tipo: ofType, limit: limit}, function(data, status){
+	$.get("http://hyp65.altervista.org/php/promotionFunctions.php", {what: 'devices_not_sl', tipo: ofType, limit: limit}, function(data, status){
 		document.getElementById(div).innerHTML = data;
 	});
 }
 
 function getPromotionServices(div, limit){
-	$.get("/php/promotionFunctions.php", {what: 'services_and_sl_devices', limit: limit}, function(data, status){
+	$.get("http://hyp65.altervista.org/php/promotionFunctions.php", {what: 'services_and_sl_devices', limit: limit}, function(data, status){
 		document.getElementById(div).innerHTML = data;
 	})
 }

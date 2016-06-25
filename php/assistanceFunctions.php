@@ -85,7 +85,7 @@
                                 	echo ''.substr(urldecode($deviceName),0,14)."...</a>";
                                 else
                                 	echo ''.urldecode($deviceName)."</a>";
-                            }
+                        }
                     }
                     
                     	echo"<br><br><a onclick=\"getRelatedProducts(".$array[AS_ID].",'".$array[AS_NAME]."','".$array[AS_CATEGORY]."','visualSmart')\" class=\"btn btn-primary";
@@ -229,7 +229,7 @@
                 		
                         <a href=\"device.html?id=".$array[$i+$j][DEV_ID]."&fromAssistance=1&assistanceId=".$assistanceID."&assistanceName=".$assistanceName."\">
                         <!-- immagine device -->
-                        <img  class=\"img-responsive\" src=\"/img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
+                        <img  class=\"img-responsive\" src=\"./img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
                         <!-- nome device -->
                               <p>".$array[$i+$j][DEV_NAME]."</p><br>
                         </a>

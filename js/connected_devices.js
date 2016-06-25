@@ -19,14 +19,14 @@ function onLoadFuc(){
 
 
 function getDeviceList(div, smartlifeID){
-	$.get("php/smartlifeFunctions.php", {what: 'devsOfService', id: smartlifeID}, 
+	$.get("http://hyp65.altervista.org/php/smartlifeFunctions.php", {what: 'devsOfService', id: smartlifeID}, 
   		function(data, status){
 	  		$('#'+div).html( data );
   	});
 }
 
 function getBreadcrumb(div, smartlifeID){
-	$.get("php/smartlifeFunctions.php", {what: 'breadcrumb', id: smartlifeID}, 
+	$.get("http://hyp65.altervista.org/php/smartlifeFunctions.php", {what: 'breadcrumb', id: smartlifeID}, 
   		function(data, status){
 	  		$('#'+div).html( data );
   	});

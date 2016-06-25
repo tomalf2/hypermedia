@@ -15,7 +15,7 @@ function mOnDocumentReady(){
 }
 
 function getHighlightsAssistances(divName){
-	$.get("/php/highlightsFunctions.php", {}, function(data, status){
+	$.get("http://hyp65.altervista.org/php/highlightsFunctions.php", {}, function(data, status){
 		document.getElementById(divName).innerHTML = data;
 	});
 }

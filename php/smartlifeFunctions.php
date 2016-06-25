@@ -51,7 +51,7 @@
 
 				echo "<div class=\"col-xs-".$colWidth."\">
 						<a href=\"device.html?id=".$array[$i+$j][DEV_ID]."&fromSmartLife=1&smartLifeID=".$smartlifeID."&smartLifeName=".getSmartInfoId($smartlifeID)[SL_NAME]."\">
-							<img class=\"img-responsive\" src=\"/img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
+							<img class=\"img-responsive\" src=\"./img/devices/".$array[$i+$j][DEV_MODEL].".jpg\">
 							<!-- nome telefono -->
 							<center>
 							<p>".$array[$i+$j][DEV_NAME]."</p>

@@ -161,7 +161,7 @@
 					for($j=0; $j<3 && $j+$i < sizeof($devices); $j++){
 						echo"<div class=\"col-xs-4\">
 							<a href=\"device.html?tipo=".$ofType."&id=".$devices[$i+$j][DEV_ID]."&fromPromotion=1&order=".$orderBy."\">
-								<img class=\"img-responsive\" src=\"/img/devices/".$devices[$i+$j][DEV_MODEL].".jpg\">
+								<img class=\"img-responsive\" src=\"./img/devices/".$devices[$i+$j][DEV_MODEL].".jpg\">
 											<!-- nome telefono -->
 											<p>".$devices[$i+$j][DEV_NAME]."</p>
 											<p>".$devices[$i+$j][DEV_PRICE]."€<p>
@@ -213,7 +213,7 @@
 			  for($j=0; $j<3 && $j < sizeof($services); $j++){
 				  echo "<div class=\"col-xs-4\">
 						  <a href=\"".$services[$i+$j][SL_LINK]."\">
-							  <img class=\"img-responsive\" src=\"/img/smartliving/".$services[$i+$j][SL_ID].".jpg\">
+							  <img class=\"img-responsive\" src=\"./img/smartliving/".$services[$i+$j][SL_ID].".jpg\">
 								  <p>".$services[$i+$j][SL_NAME]."</p>
 								  <p>".$services[$i+$j][SL_PRICE]."</p>
 						  </a>
