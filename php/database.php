@@ -1,4 +1,6 @@
 <?php
+		header('Access-Control-Allow-Origin: *');
+		
 		define("HOST", "localhost"); // E' il server a cui ti vuoi connettere.
 		define("USER", "hyp65"); // E' l'utente con cui ti collegherai al DB.
 		define("PASSWORD", ""); // Password di accesso al DB.

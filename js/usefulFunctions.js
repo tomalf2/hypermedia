@@ -1,3 +1,8 @@
+$(document).bind("mobileinit", function () {
+ $.support.cors = true;
+ $.mobile.allowCrossDomainPages = true; });
+
+
 // fill targetDiv with the header.php contents adapted to current page 
 function mGetHeader(currentPageName, targetDiv) {
 	var parametri = {};

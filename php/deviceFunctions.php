@@ -9,6 +9,7 @@
 </head>
 <body>
 <?php
+	header('Access-Control-Allow-Origin: *');
 	include'database.php';
 
 

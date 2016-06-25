@@ -2,7 +2,7 @@
 
 	$url = $_GET['url'];
 	$page = $_GET['pageName'];
-
+	header('Access-Control-Allow-Origin: *');
 	include 'database.php';
 
 	echo breadcrumbIncipit();

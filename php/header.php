@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 mHeaderTemplate($_REQUEST['pagina']);
 function mHeaderTemplate($active){
 	echo"
