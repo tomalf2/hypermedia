@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 mHeaderTemplate($_REQUEST['pagina']);
 function mHeaderTemplate($active){
 	echo"
-		<img id=\"header_img\" class=\"img-responsive\" src=\"/img/header.jpg\">";
+		<img id=\"header_img\" class=\"img-responsive\" src=\"./img/header.jpg\">";
 		/*
 			<div class=\"container-fluid\">
 				<h1>I'm DOOM</h1>
@@ -91,102 +91,6 @@ function mHeaderTemplate($active){
 			</div>
 		</div>
 	</nav>";
-}
-
-function headerTemplate($active){
-	// echo"
-	// 	<!-- alternative image
-	// 	http://www.certainaffinity.com/wp-content/gallery/carousel/quakecon2015_d4_header.png
-	// 	-->
-		
-	// 	<img id=\"header_img\" class=\"img-responsive\" src=\"/img/header.jpg\">";
-	// 	/*
-	// 		<div class=\"container-fluid\">
-	// 			<h1>I'm DOOM</h1>
-	// 			<p>An now all of you poor COD players are fucked.</p> 
-	// 		</div>
-	// 	*/
-	// 	echo"
-	// 	<!-- nav bar -->
-	// 	<nav id=\"navbar\" class=\"navbar navbar-inverse\">
-	// 		<div class=\"container-fluid\">
-	// 			<div class=\"navbar-header\">
-	// 				<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">
-	// 					<span class=\"icon-bar\"></span>
-	// 					<span class=\"icon-bar\"></span>
-	// 					<span class=\"icon-bar\"></span> 
-	// 				</button>
-	// 				<a class=\"navbar-brand\" href=\"#\">Brand name or nothing ? </a>
-	// 			</div>
-	// 		<div class=\"collapse navbar-collapse\" id=\"myNavbar\">
-	// 			<ul class=\"nav navbar-nav navbar-right\">
-	// 				";
-	// 				if($active=="home")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"index.php\">Home</a></li> ";
-
-
-	// 				if($active=="devices")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"group_devices.php\">Devices</a></li>";
-
-
-	// 				 codice per menu espandibile --> sostituire la echo qui sopra col codice sottostante
-	// 					echo"<li class=\"dropdown\">
-	// 						<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Brief hystory of DOOM<span class=\"caret\"></span></a>
-	// 						<ul class=\"dropdown-menu\">
-	// 							<li><a href=\"#\">Page 1-1</a></li>
-	// 							<li><a href=\"#\">Page 1-2</a></li>
-	// 							<li><a href=\"#\">Page 1-3</a></li> 
-	// 						</ul>
-	// 					</li>";
-					
-
-						
-	// 				if($active=="promotions")
-	// 					echo"<li class=\"active\">";
-	// 				else
-	// 					echo"<li>";
-	// 				echo"<a href=\"group_promotions.php\">Promotions</a></li>";
-
-
-
-	// 				if($active=="assistance")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"group_assistance.php\">Assistance</a></li>"; 
-
-
-	// 				if($active=="highlights")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"group_highlights.php\">Highlights</a></li>"; 
-
-
-	// 				if($active=="smartlife")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"group_smartlife.php\">Smart Life Services</a></li>"; 
-
-
-	// 				if($active=="aboutus")
-	// 					echo"<li class=\"active\">";
-	// 				else	
-	// 					echo"<li>";
-	// 				echo"<a href=\"aboutus.php\">About Us</a></li> 
-
-
-	// 			</ul>
-	// 		</div>
-	// 	</div>
-	// </nav>";
 }
 
 

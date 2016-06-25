@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
@@ -51,7 +50,7 @@
 		for($i=0; $i<sizeof($devices); $i++){
 			echo "<div class=\"col-xs-".$colWidth."\">
 				<a href=\"device.html?tipo=".$ofType."&id=".$devices[$i][DEV_ID]."&fromHome=1\">
-					<img class=\"img-responsive\" src=\"/img/devices/".$devices[$i][DEV_MODEL].".jpg\">
+					<img class=\"img-responsive\" src=\"./img/devices/".$devices[$i][DEV_MODEL].".jpg\">
 								<!-- nome telefono -->
 								<p>".$devices[$i][DEV_NAME]."</p>
 								<p>".$devices[$i][DEV_PRICE]."€<p>
@@ -94,7 +93,7 @@
 		for($i=0; $i<$limit_services; $i++){
 			echo "<div class=\"col-xs-".$colWidth."\">
 					<a href=\"".$services[$i][SL_LINK]."&fromHome=1\">
-						<img class=\"img-responsive\" src=\"/img/smartliving/".$services[$i][SL_ID].".jpg\">
+						<img class=\"img-responsive\" src=\"./img/smartliving/".$services[$i][SL_ID].".jpg\">
 							<p>".$services[$i][SL_NAME]."</p>
 							<p>".$services[$i][SL_PRICE]."</p>
 					</a>
@@ -103,7 +102,7 @@
 		for($i=0; $i<$limit_devices; $i++){
 			echo "<div class=\"col-xs-".$colWidth."\">
 					<a href=\"device.html?tipo=".$ofType."&id=".$devices[$i][DEV_ID]."&fromHome=1\">
-						<img class=\"img-responsive\" src=\"/img/devices/".$devices[$i][DEV_MODEL].".jpg\">
+						<img class=\"img-responsive\" src=\"./img/devices/".$devices[$i][DEV_MODEL].".jpg\">
 							<p>".$devices[$i][DEV_NAME]."</p>
 							<p>".$devices[$i][DEV_PRICE]."€<p>
 					</a>

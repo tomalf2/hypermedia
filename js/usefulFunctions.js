@@ -7,7 +7,7 @@ $(document).bind("mobileinit", function () {
 function mGetHeader(currentPageName, targetDiv) {
 	var parametri = {};
 	parametri["pagina"] = currentPageName;
-  	$.get("php/header.php", parametri, function(data, status){
+  	$.get("http://hyp65.altervista.org/php/header.php", parametri, function(data, status){
   	  	document.getElementById(targetDiv).innerHTML = data;
   	  	console.log(status);
   	});
@@ -21,7 +21,7 @@ function mGetHeader(currentPageName, targetDiv) {
 /////  ./DATABASE.PHP HAS TO RENAMED IN PHP/DATABASE.PHP  !!!!!!!!!    ///////////////////////////////////////////////////////
 // now the database.php called is that one in root folder
 function getJson(type,div,callbackFunction,getWhat){
-	$.getJSON("./database.php",{function:getWhat,tipo:type},function(result){
+	$.getJSON("http://hyp65.altervista.org/php/database.php",{function:getWhat,tipo:type},function(result){
 	callbackFunction(result,div);
   	});
 }
@@ -52,13 +52,13 @@ function breadcrumb(div){
 	var pageName = pageName.substr( 0, pageNameEndAt);
 
 	console.log(pageName);
-	$.get("/php/breadcrumb.php", {pageName: pageName, url: url}, function(data, status){
+	$.get("http://hyp65.altervista.org/php/breadcrumb.php", {pageName: pageName, url: url}, function(data, status){
 		document.getElementById(div).innerHTML = data;
 	});
 }
 
 
 function footer(div){
-	$("#"+div).load("footer.html");
+	$("#"+div).load("http://hyp65.altervista.org/php/footer.php");
 }
 

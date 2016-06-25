@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="./css/footer.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
@@ -13,6 +13,9 @@
 	<!-- Change current enlighted menu in the navbar -->
 </head>
 <body>
+<?php
+	header('Access-Control-Allow-Origin: *');
+?>
 
 <div id="first-row" class="container-fluid mFooter">
 	<div class="row-content">
@@ -36,7 +39,7 @@
 			<div class="col-sm-2 sidenav"></div>
 		</div>
 		<div id="logo" class="col-xs-4 right">
-			<img class="img-responsive pull-right" src="/img/TIM2.png">
+			<img class="img-responsive pull-right" src="./img/TIM2.png">
 			<h4 id="gruppo_telecom_italia">Gruppo Telecom Italia</h4>
 		</div>
 	 </div>
