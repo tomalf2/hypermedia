@@ -28,8 +28,8 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-2">
 				<ul class="mList">
-					<li><a href="/promotions.html"> Promozioni</a></li>
-					<li><a href="/highlights.html"> Highlights</a></li>
+					<li><a href="promotions.html"> Promozioni</a></li>
+					<li><a href="highlights.html"> Highlights</a></li>
 					<li class="s_title"> Newsletter</li>
 				</ul>
 			</div>
