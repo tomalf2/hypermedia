@@ -51,23 +51,6 @@ function geturlvariabili() {
 }
 
 
-function breadcrumb(div){
-	var url = window.location.href;
-	
-	var pageName = url;
-	for(var i=0; i<3; i++ ){
-		pageName = pageName.substring( pageName.indexOf('/') +1 );
-	}
-	var pageNameEndAt = pageName.indexOf(".");
-	var pageName = pageName.substr( 0, pageNameEndAt);
-
-	console.log(pageName);
-	$.get("http://hyp65.altervista.org/php/breadcrumb.php", {pageName: pageName, url: url}, function(data, status){
-		document.getElementById(div).innerHTML = data;
-	});
-}
-
-
 function footer(div){
 	$("#"+div).load("http://hyp65.altervista.org/php/footer.php");
 }
